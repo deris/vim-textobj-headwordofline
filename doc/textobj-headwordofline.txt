@@ -1,0 +1,93 @@
+*textobj-headwordofline.txt*	Text objects for head word of line
+
+Version 0.0.1
+Copyright (C) 2013 deris0126
+License: So-called MIT license  {{{
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+}}}
+
+CONTENTS					*textobj-headwordofline-contents*
+
+Introduction		|textobj-headwordofline-introduction|
+Interface		|textobj-headwordofline-interface|
+  Mappings		  |textobj-headwordofline-mappings|
+  CUSTOMIZING		  |textobj-headwordofline-customizing|
+
+
+
+
+==============================================================================
+INTRODUCTION					*textobj-headwordofline-introduction*
+
+*textobj-headwordofline* is a Vim plugin to provide text objects to select the
+head word of line.
+
+
+Requirements:
+- Vim 7.2 or later
+- |textobj-user| 0.3.7 or later (vimscript#2100)
+
+Latest version:
+https://github.com/deris/vim-textobj-headwordofline
+
+
+
+
+
+==============================================================================
+INTERFACE					*textobj-headwordofline-interface*
+
+------------------------------------------------------------------------------
+MAPPINGS					*textobj-headwordofline-mappings*
+
+These key mappings are defined in Visual mode and Operator-pending mode.
+
+<Plug>(textobj-headwordofline-a)			*<Plug>(textobj-headwordofline-a)*
+			Select the head word of line.
+
+<Plug>(textobj-headwordofline-i)			*<Plug>(textobj-headwordofline-i)*
+			Like |<Plug>(textobj-headwordofline-a)|, but trailing
+			spaces are excluded.
+
+
+
+
+==============================================================================
+CUSTOMIZING					*textobj-headwordofline-customizing*
+
+				    *g:textobj_headwordofline_no_default_key_mappings*
+					    *:TextobjheadwordoflineDefaultKeyMappings*
+This plugin will define the following key mappings in Visual mode and
+Operator-pending mode automatically.  If you don't want these key mappings,
+define |g:textobj_headwordofline_no_default_key_mappings| before this plugin is loaded
+(e.g. in your |vimrc|).  You can also use |:TextobjheadwordoflineDefaultKeyMappings|
+to redefine these key mappings.  This command doesn't override existing {lhs}s
+unless [!] is given.
+
+	{lhs}	{rhs}			~
+	-----	----------------------	~
+	ah	<Plug>(textobj-headwordofline-a)
+	ih	<Plug>(textobj-headwordofline-i)
+
+
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:fen:fdl=0:fdm=marker:
