@@ -81,11 +81,7 @@ function! s:select(in)
     if first_pos[1] != end_pos[1]
       let end_pos = tail_pos
     else
-      if a:in == 1
-        normal! ge
-      else
-        normal! h
-      endif
+      execute 'normal! ' . (a:in == 1 ? 'ge' : 'h')
       let end_pos = getpos('.')
     endif
   finally
